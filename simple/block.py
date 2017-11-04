@@ -16,10 +16,10 @@ class login():
     def login_download_pic(self):
         self.broswer = webdriver.Firefox()
         self.broswer.get(self.login_url)
-        time.sleep(3)
+        time.sleep(2)
         self.broswer.find_element_by_xpath('//input[@id="keyword"]').send_keys(u'中国移动')
         self.broswer.find_element_by_xpath('//button[@id="btn_query"]').click()
-        time.sleep(3)
+        time.sleep(2)
         # pic_url = re.search(r'&quot;(http://static.geetest.com.+?jpg)', self.broswer.page_source).group(1)
         # return pic_url
 
@@ -37,7 +37,6 @@ class login():
         ActionChains(self.broswer).move_to_element_with_offset(to_element=element, xoffset=200, yoffset=50).perform()
         time.sleep(1)
         ActionChains(self.broswer).release(on_element=element).perform()
-        time.sleep(3)
 
 
 if __name__ == '__main__':
